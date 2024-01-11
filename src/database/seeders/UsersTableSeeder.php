@@ -14,9 +14,9 @@ class UsersTableSeeder extends Seeder
     public function run(): void
     {
         $param = [
+            'name' => 'テスト利用者',
             'email' => 'test01@email.com',
             'password' => bcrypt('test_01'),
-            'name' => 'テスト利用者',
             'image' => 'https://github.com/nishimuraysk/fleamarket/assets/140567528/6cc1a64b-a295-41e9-99f3-9ec363a0003b',
             'post' => 1540004,
             'address' => '東京都世田谷区太子堂1-5-13',

@@ -76,7 +76,11 @@ https://docs.google.com/spreadsheets/d/1z_4AVKl72FAMUXmwfpkTUVhkkbqYOt0MMNAwRvAX
 docker-compose up -d --build
 docker-compose exec php bash
 composer create-project "laravel/laravel=10.*" . --prefer-dist
-
+php artisan migrate
+php artisan db:seed
+composer require laravel/fortify
+php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
+php artisan migrate
 ```
 
 ## 他に記載することがあれば記述する
