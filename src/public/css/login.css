@@ -6,12 +6,15 @@
 
 .login-form__heading {
     margin-bottom: 20px;
+    padding-top: 50px;
     text-align: center;
 }
 
 .form {
     margin: 0 auto;
-    width: 25%;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    width: 400px;
     text-align: center;
 }
 
@@ -21,6 +24,8 @@
 
 .form__group-title {
     text-align: left;
+    padding-bottom: 5px;
+    font-size: 18px;
 }
 
 .form__error {
@@ -35,21 +40,20 @@
     height: 40px;
     border: 1px solid #ddd;
     border-radius: 3px;
-
     appearance: none;
 }
 
 .form__button {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
-    height: 50px;
+    width: 400px;
+    height: 40px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: #FF5555;
     color: #fff;
     cursor: pointer;
 }
@@ -57,4 +61,9 @@
 .register__link {
     margin-top: 20px;
     text-align: center;
+}
+
+.register__button-submit {
+    text-decoration: none;
+    color: blue;
 }
