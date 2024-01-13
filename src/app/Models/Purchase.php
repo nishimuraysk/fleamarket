@@ -13,7 +13,7 @@ class Purchase extends Model
         'user_id',
         'item_id',
         'payment',
-        'post',
+        'postcode',
         'address',
         'building',
     ];

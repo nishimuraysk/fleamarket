@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test01@email.com',
             'password' => bcrypt('test_01'),
             'image' => 'https://github.com/nishimuraysk/fleamarket/assets/140567528/6cc1a64b-a295-41e9-99f3-9ec363a0003b',
-            'post' => 1540004,
+            'postcode' => '154-0004',
             'address' => '東京都世田谷区太子堂1-5-13',
             'building' => 'マンション三軒茶屋202',
             'created_at' => Carbon::now(),

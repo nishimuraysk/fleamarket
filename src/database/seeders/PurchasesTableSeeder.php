@@ -17,7 +17,7 @@ class PurchasesTableSeeder extends Seeder
             'user_id' => 1,
             'item_id' => 1,
             'payment' => 'コンビニ払い',
-            'post' => 1540004,
+            'postcode' => '154-0004',
             'address' => '東京都世田谷区太子堂1-5-13',
             'building' => 'マンション三軒茶屋202',
             'created_at' => Carbon::now(),
