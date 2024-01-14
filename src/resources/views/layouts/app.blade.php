@@ -49,7 +49,7 @@
                             </li>
                             @else
                             <li class="header-nav__item">
-                                <a class="header-nav__link" href="/login">ログイン</a>
+                                <a class="header-nav__button" href=" /login">ログイン</a>
                             </li>
                             <li class="header-nav__item">
                                 <a class="header-nav__link" href="/register">会員登録</a>

@@ -110,6 +110,21 @@
 
 @media only screen and (max-width: 768px) {
     .link__container {
+        margin: auto;
+        justify-content: center;
+    }
+
+    .recommend {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mylist {
+        display: flex;
+        justify-content: center;
+    }
+
+    .item__content {
         justify-content: center;
     }
 
