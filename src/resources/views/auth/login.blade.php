@@ -15,9 +15,11 @@
     <header class="header">
         <div class="header__inner">
             <div class="header-utilities">
-                <a class="header__logo" href="/">
-                    coachtechフリマ
-                </a>
+                <div class="logo__container">
+                    <a class="header__logo" href="/">
+                        coachtechフリマ
+                    </a>
+                </div>
             </div>
         </div>
     </header>

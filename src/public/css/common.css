@@ -1,5 +1,6 @@
 .header {
     background: #000;
+    height: 60px;
 }
 
 .header__inner {
@@ -14,11 +15,22 @@
     justify-content: space-between;
 }
 
+.logo__container {
+    width: 400px;
+}
+
 .header__logo {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
 }
 
 .header-nav {
@@ -62,7 +74,7 @@
 }
 
 .search-box {
-    width: 600px;
+    width: 250px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -71,26 +83,191 @@
 .search-form {
     border-radius: 5px;
     background-color: white;
-    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+    border: solid;
+    border-width: 0.8px;
+    border-color: lightslategray;
 }
 
 .search-text {
-    height: 35px;
-    width: 400px;
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
-    border-right-width: 1px;
-    border-color: beige;
+    height: 30px;
+    width: 200px;
+    border: none;
+    border-radius: 5px 0 0 5px;
     padding: 0 10px;
     font-size: 12px;
 }
 
 .search-button {
-    height: 35px;
-    width: 35px;
+    border-radius: 0 5px 5px 0;
+    height: 30px;
+    width: 30px;
     border: none;
     background-color: white;
     cursor: pointer;
-    padding: 0 10px;
+    margin-right: 3px;
+    padding: 0 10px 5px 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-utilities {
+        justify-content: center;
+    }
+
+    .logo__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .nav {
+        position: fixed;
+        right: -320px;
+        top: 0;
+        width: 300px;
+        height: 100vh;
+        padding-top: 60px;
+        background-color: #fff;
+        transition: all .6s;
+        z-index: 200;
+        overflow-y: auto;
+        align-items: start;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 15px;
+        top: 8px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 300;
+    }
+
+    .header-nav__container {
+        height: 100%;
+    }
+
+    .header-nav {
+        margin: 10px 0 0 0;
+        padding: 0;
+        list-style: none;
+        align-items: start;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .header-nav__item {
+        text-align: center;
+        padding: 10px 14px;
+        width: 100%;
+    }
+
+    .header-nav__item-sell {
+        text-align: center;
+        padding: 10px 14px;
+        width: 100%;
+    }
+
+    .header-nav__link {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .header-nav__button {
+        width: 100%;
+        margin-bottom: -15px;
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .header-nav__link-sell {
+        width: 100%;
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .header-nav__link:hover {
+        background-color: #eee;
+    }
+
+    .header-nav__button:hover {
+        background-color: #eee;
+    }
+
+    .header-nav__link-sell:hover {
+        background-color: #eee;
+    }
+
+    .hamburger_border {
+        position: absolute;
+        left: 11px;
+        width: 18px;
+        height: 2px;
+        background-color: white;
+        transition: all .6s;
+    }
+
+    .hamburger_border_top {
+        top: 14px;
+    }
+
+    .hamburger_border_center {
+        top: 20px;
+    }
+
+    .hamburger_border_bottom {
+        top: 26px;
+    }
+
+    .black_bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        background-color: #333;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .6s;
+        cursor: pointer;
+    }
+
+    .nav-open .nav {
+        right: 0;
+    }
+
+    .nav-open .black_bg {
+        opacity: .8;
+        visibility: visible;
+    }
+
+    .nav-open .hamburger_border_top {
+        transform: rotate(45deg);
+        top: 20px;
+        background-color: #333;
+    }
+
+    .nav-open .hamburger_border_center {
+        width: 0;
+        left: 50%;
+    }
+
+    .nav-open .hamburger_border_bottom {
+        transform: rotate(-45deg);
+        top: 20px;
+        background-color: #333;
+    }
 }
