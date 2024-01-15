@@ -87,6 +87,8 @@
     border: solid;
     border-width: 0.8px;
     border-color: lightslategray;
+    padding-top: 3px;
+    padding-left: 3px;
 }
 
 .search-text {

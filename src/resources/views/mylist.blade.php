@@ -8,28 +8,26 @@
 <div class="under-line">
     <div class="link__container">
         <div class="recommend">
-            <a class="selected__link" href="/">おすすめ</a>
+            <a class="unselected__link" href="/">おすすめ</a>
         </div>
-        @if ( !empty($user) )
         <div class="mylist">
-            <a class="unselected__link" href="/user/{{ $user['id'] }}">マイリスト</a>
+            <a class="selected__link" href="/user/{{ $user['id'] }}">マイリスト</a>
         </div>
-        @endif
     </div>
 </div>
 <div class="item__content">
-    @foreach ( $items as $item )
-    <a class="item__link" href="/item/{{ $item['id'] }}">
+    @foreach ( $favorites as $favorite )
+    <a class="item__link" href="/item/{{ $favorite['item']['id'] }}">
         <div class="item__container">
             <div class="item-img">
-                <img class="img" src="{{ $item['image'] }}">
+                <img class="img" src="{{ $favorite['item']['image'] }}">
                 <div class="item-price">
-                    ￥{{ $item['price'] }}
+                    ￥{{ $favorite['item']['price'] }}
                 </div>
             </div>
             <div class="item-name">
                 <p class="txt-limit">
-                    {{ $item['name'] }}
+                    {{ $favorite['item']['name'] }}
                 </p>
             </div>
         </div>

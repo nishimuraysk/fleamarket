@@ -23,7 +23,7 @@
     width: 120px;
 }
 
-.recommend__link {
+.selected__link {
     text-decoration: none;
     color: #FF5555;
     font-size: 16px;
@@ -34,7 +34,7 @@
     width: 120px;
 }
 
-.mylist__link {
+.unselected__link {
     text-decoration: none;
     color: #333;
     font-size: 16px;
