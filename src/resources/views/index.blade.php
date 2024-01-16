@@ -35,5 +35,10 @@
         </div>
     </a>
     @endforeach
+    @if (count($items) === 0)
+    <div class="message__container">
+        検索条件に該当する商品情報はございません。
+    </div>
+    @endif
 </div>
 @endsection

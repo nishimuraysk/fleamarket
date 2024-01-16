@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,12 @@ use App\Http\Controllers\ItemController;
 
 Route::get('/', [ItemController::class, 'index']);
 Route::get('/search', [ItemController::class, 'search']);
+Route::get('/category/{category_id}', [ItemController::class, 'category']);
+Route::get('/item/{item_id}', [ItemController::class, 'detail']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/user/{user_id}', [ItemController::class, 'mylist']);
+    Route::post('/favorite', [FavoriteController::class, 'create']);
+    Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
 });
