@@ -14,7 +14,7 @@
             {{ $item['name'] }}
         </div>
         <div class="item-price">
-            ￥{{ $item['price'] }}
+            ￥{{ number_format($item['price']) }}
         </div>
         <div class="icon__container">
             <div class="icon__content">

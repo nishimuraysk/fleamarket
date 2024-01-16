@@ -22,7 +22,7 @@
             <div class="item-img">
                 <img class="img" src="{{ $favorite['item']['image'] }}">
                 <div class="item-price">
-                    ￥{{ $favorite['item']['price'] }}
+                    ￥{{ number_format($favorite['item']['price']) }}
                 </div>
             </div>
             <div class="item-name">
