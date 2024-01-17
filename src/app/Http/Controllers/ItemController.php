@@ -28,7 +28,7 @@ class ItemController extends Controller
     {
         $category = Category::where('id', $category_id)->first();
         $items = Item::where('category_id', $category_id)->orderBy('created_at', 'desc')->get();
-        return view('category', ['category' => $category, 'items' => $items]);
+        return view('index', ['category' => $category, 'items' => $items]);
     }
 
     public function search(Request $request)

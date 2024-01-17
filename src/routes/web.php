@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ Route::get('/', [ItemController::class, 'index']);
 Route::get('/search', [ItemController::class, 'search']);
 Route::get('/category/{category_id}', [ItemController::class, 'category']);
 Route::get('/item/{item_id}', [ItemController::class, 'detail']);
+Route::get('/comment/{item_id}', [CommentController::class, 'index']);
 
 
 Route::middleware('auth')->group(function () {

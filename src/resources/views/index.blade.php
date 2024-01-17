@@ -7,6 +7,15 @@
 @section('content')
 <div class="under-line">
     <div class="link__container">
+        @if( !empty($input_keyword) )
+        <div class="category">
+            <p class="unselected__link">「{{ $input_keyword }}」の検索結果</p>
+        </div>
+        @elseif( !empty($category) )
+        <div class="category">
+            <p class="unselected__link">{{ $category['name'] }}商品一覧</p>
+        </div>
+        @else
         <div class="recommend">
             <a class="selected__link" href="/">おすすめ</a>
         </div>
@@ -14,6 +23,7 @@
         <div class="mylist">
             <a class="unselected__link" href="/user/{{ $user['id'] }}">マイリスト</a>
         </div>
+        @endif
         @endif
     </div>
 </div>

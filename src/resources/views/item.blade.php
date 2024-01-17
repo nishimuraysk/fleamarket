@@ -5,6 +5,16 @@
 @endsection
 
 @section('content')
+<div class="under-line">
+    <div class="link__container">
+        <div class="detail">
+            <a class="selected__link" href="/item/{{ $item['id'] }}">商品説明</a>
+        </div>
+        <div class="comment">
+            <a class="unselected__link" href="/comment/{{ $item['id'] }}">コメント</a>
+        </div>
+    </div>
+</div>
 <div class="main__container">
     <div class="image__container">
         <img class="img" src="{{ $item['image'] }}">
