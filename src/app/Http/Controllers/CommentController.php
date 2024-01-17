@@ -20,9 +20,30 @@ class CommentController extends Controller
         if (!empty($user)) {
             $favorite = Favorite::where('user_id', $user->id)->where('item_id', $item_id)->first();
 
-            return view('comment', ['item' => $item, 'favorite_count' => $favorite_count, 'comment_count' => $comment_count, 'favorite' => $favorite, 'comments' => $comments]);
+            return view('comment', ['item' => $item, 'favorite_count' => $favorite_count, 'comment_count' => $comment_count, 'favorite' => $favorite, 'comments' => $comments, 'user' => $user]);
         };
 
         return view('comment', ['item' => $item, 'favorite_count' => $favorite_count, 'comment_count' => $comment_count, 'comments' => $comments]);
+    }
+
+    public function create(Request $request)
+    {
+        $user = auth()->user();
+        $create_data = [
+            'user_id' => $user->id,
+            'item_id' => $request->id,
+            'comment' => $request->comment,
+        ];
+
+        Comment::create($create_data);
+
+        return redirect()->back();
+    }
+
+    public function delete(Request $request)
+    {
+        Comment::where('id', $request->id)->delete();
+
+        return redirect()->back();
     }
 }

@@ -22,9 +22,10 @@ Route::get('/category/{category_id}', [ItemController::class, 'category']);
 Route::get('/item/{item_id}', [ItemController::class, 'detail']);
 Route::get('/comment/{item_id}', [CommentController::class, 'index']);
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/user/{user_id}', [ItemController::class, 'mylist']);
     Route::post('/favorite', [FavoriteController::class, 'create']);
     Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
+    Route::post('/comment', [CommentController::class, 'create']);
+    Route::post('/comment/delete', [CommentController::class, 'delete']);
 });
