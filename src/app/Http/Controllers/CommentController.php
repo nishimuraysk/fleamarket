@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Favorite;
 use App\Models\Comment;
+use App\Http\Requests\CommentRequest;
 
 class CommentController extends Controller
 {
@@ -26,7 +27,7 @@ class CommentController extends Controller
         return view('comment', ['item' => $item, 'favorite_count' => $favorite_count, 'comment_count' => $comment_count, 'comments' => $comments]);
     }
 
-    public function create(Request $request)
+    public function create(CommentRequest $request)
     {
         $user = auth()->user();
         $create_data = [

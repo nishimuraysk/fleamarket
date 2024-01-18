@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\MypageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
     Route::post('/comment', [CommentController::class, 'create']);
     Route::post('/comment/delete', [CommentController::class, 'delete']);
+    Route::get('/mypage', [MypageController::class, 'index']);
 });

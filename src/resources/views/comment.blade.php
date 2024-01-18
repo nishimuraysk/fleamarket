@@ -109,7 +109,10 @@
                 <div class="item-heading">
                     商品へのコメント
                 </div>
-                <textarea class="item-comment__area" name="comment" id="comment" placeholder="250文字以内でコメントを入力してください。" maxlength="250" required></textarea>
+                <textarea class="item-comment__area" name="comment" id="comment" placeholder="255文字以内でコメントを入力してください。" maxlength="255"></textarea>
+                @error('comment')
+                <p class="error-message">{{$errors->first('comment')}}</p>
+                @enderror
             </div>
             <div class="button__container">
                 <button class="button">

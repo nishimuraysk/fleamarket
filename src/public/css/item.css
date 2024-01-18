@@ -249,6 +249,12 @@
     padding-bottom: 10px;
 }
 
+.error-message {
+    margin-top: 10px;
+    color: #FF5555;
+    font-size: 14px;
+}
+
 @media only screen and (max-width: 768px) {
     .link__container {
         margin: auto;
