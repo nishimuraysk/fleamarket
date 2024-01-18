@@ -75,10 +75,6 @@
     width: 120px;
 }
 
-.category {
-    width: 400px;
-}
-
 .selected__link {
     text-decoration: none;
     color: #FF5555;
@@ -164,11 +160,6 @@
     color: #333;
 }
 
-.message__container {
-    width: 100%;
-    color: black;
-}
-
 @media only screen and (max-width: 768px) {
     .link__container {
         margin: auto;
@@ -181,11 +172,6 @@
     }
 
     .purchase {
-        display: flex;
-        justify-content: center;
-    }
-
-    .category {
         display: flex;
         justify-content: center;
     }

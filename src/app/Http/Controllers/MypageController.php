@@ -12,7 +12,13 @@ class MypageController extends Controller
     {
         $user = auth()->user();
         $items = Item::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        return view('mypage', ['user' => $user, 'items' => $items]);
+    }
+
+    public function purchase()
+    {
+        $user = auth()->user();
         $purchases = Purchase::with('item')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
-        return view('mypage', ['user' => $user, 'items' => $items, 'purchases' => $purchases]);
+        return view('mypage_purchase', ['user' => $user, 'purchases' => $purchases]);
     }
 }

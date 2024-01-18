@@ -30,4 +30,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/comment', [CommentController::class, 'create']);
     Route::post('/comment/delete', [CommentController::class, 'delete']);
     Route::get('/mypage', [MypageController::class, 'index']);
+    Route::get('/mypage/purchase', [MypageController::class, 'purchase']);
 });
