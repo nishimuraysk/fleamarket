@@ -1,3 +1,7 @@
+.profile__content {
+    margin-top: -20px;
+}
+
 .mypage__container {
     display: flex;
     margin: 0 auto 30px auto;
@@ -63,7 +67,7 @@
 }
 
 .form__group {
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .form__group-title {
@@ -131,4 +135,10 @@
     justify-content: center;
     background-color: slategrey;
     color: white;
+}
+
+.error-message {
+    margin-top: 10px;
+    color: #FF5555;
+    font-size: 14px;
 }

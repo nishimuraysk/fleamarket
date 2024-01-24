@@ -11,7 +11,7 @@ class MypageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,22 @@ class MypageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'image' => 'required|string',
+            'postcode' => 'required|string|max:8',
+            'address' => 'required|string|max:255',
+            'building' => 'required|string|max:255',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name' => 'ユーザー名は255文字以内で必ず入力してください。',
+            'image' => 'プロフィール画像は必ず入力してください。',
+            'postcode' => '郵便番号は8文字以内で必ず入力してください。',
+            'address' => '住所は255文字以内で必ず入力してください。',
+            'building' => '建物名は255文字以内で必ず入力してください。',
         ];
     }
 }

@@ -12,11 +12,11 @@
     </div>
     @endif
 </div>
-<div class="profile__content">
-    <div class="profile-form__heading">
+<div class="sell__content">
+    <div class="sell-form__heading">
         <h2>商品の出品</h2>
     </div>
-    <form class="profile__form" action="/sell" method="post">
+    <form class="sell__form" action="/sell" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -36,10 +36,27 @@
             </div>
             <div class="form__input--text">
                 <select name="category_id" id="category_id" value="{{ old('category_id') }}">
+                    @if ($errors->any())
+                    @if (!empty(old('category_id')))
+                    @foreach ( $categories as $category )
+                    @if (old('category_id') == $category['id'])
+                    <option value="{{ $category['id'] }}" selected>{{ $category['name'] }}</option>
+                    @else
+                    <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                    @endif
+                    @endforeach
+                    @else
                     <option value="" selected disabled style='display:none;'></option>
                     @foreach ( $categories as $category )
                     <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                     @endforeach
+                    @endif
+                    @else
+                    <option value="" selected disabled style='display:none;'></option>
+                    @foreach ( $categories as $category )
+                    <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                    @endforeach
+                    @endif
                 </select>
             </div>
             @error('category_id')
@@ -51,11 +68,28 @@
                 <span class="form__label--item">商品の状態</span>
             </div>
             <div class="form__input--text">
-                <select name="condition_id" id="condition_id">
+                <select name="condition_id" id="condition_id" value="{{ old('condition_id') }}">
+                    @if ($errors->any())
+                    @if (!empty(old('condition_id')))
+                    @foreach ( $conditions as $condition )
+                    @if (old('condition_id') == $condition['id'])
+                    <option value="{{ $condition['id'] }}" selected>{{ $condition['condition'] }}</option>
+                    @else
+                    <option value="{{ $condition['id'] }}">{{ $condition['condition'] }}</option>
+                    @endif
+                    @endforeach
+                    @else
                     <option value="" selected disabled style='display:none;'></option>
                     @foreach ( $conditions as $condition )
                     <option value="{{ $condition['id'] }}">{{ $condition['condition'] }}</option>
                     @endforeach
+                    @endif
+                    @else
+                    <option value="" selected disabled style='display:none;'></option>
+                    @foreach ( $conditions as $condition )
+                    <option value="{{ $condition['id'] }}">{{ $condition['condition'] }}</option>
+                    @endforeach
+                    @endif
                 </select>
             </div>
             @error('condition_id')

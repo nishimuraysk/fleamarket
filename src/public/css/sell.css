@@ -1,15 +1,14 @@
-.profile-form__content {
-    margin: 0 auto;
-    padding: 10px 15px;
+.sell__content {
+    margin-top: -20px;
 }
 
-.profile-form__heading {
+.sell-form__heading {
     margin-bottom: 20px;
     padding-top: 20px;
     text-align: center;
 }
 
-.profile__form {
+.sell__form {
     margin: 0 auto;
     padding-top: 15px;
     padding-bottom: 25px;
@@ -103,4 +102,8 @@
     margin-top: 10px;
     color: #FF5555;
     font-size: 14px;
+}
+
+select {
+    appearance: none;
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Purchase;
 use App\Models\User;
+use App\Http\Requests\MypageRequest;
 
 class MypageController extends Controller
 {
@@ -29,7 +30,7 @@ class MypageController extends Controller
         return view('profile', ['user' => $user]);
     }
 
-    public function update(Request $request)
+    public function update(MypageRequest $request)
     {
         $user = auth()->user();
         $update_data = [
