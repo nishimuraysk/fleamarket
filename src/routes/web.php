@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\SellController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/comment/delete', [CommentController::class, 'delete']);
     Route::get('/mypage', [MypageController::class, 'index']);
     Route::get('/mypage/purchase', [MypageController::class, 'purchase']);
+    Route::get('/mypage/profile', [MypageController::class, 'profile']);
+    Route::post('/mypage/profile', [MypageController::class, 'update']);
+    Route::get('/sell', [SellController::class, 'index']);
+    Route::post('/sell', [SellController::class, 'create']);
 });
