@@ -6,6 +6,7 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\SellController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/mypage/profile', [MypageController::class, 'update']);
     Route::get('/sell', [SellController::class, 'index']);
     Route::post('/sell', [SellController::class, 'create']);
+    Route::get('/purchase/{item_id}', [PurchaseController::class, 'index']);
+    Route::post('/purchase/{item_id}', [PurchaseController::class, 'action']);
+    Route::get('/thanks', function () {
+        return view('thanks');
+    });
+    Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']);
+    Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'update']);
 });
