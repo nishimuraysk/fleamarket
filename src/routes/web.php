@@ -7,6 +7,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,8 @@ Route::middleware('auth')->group(function () {
     });
     Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']);
     Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'update']);
+    Route::prefix('payment')->name('payment.')->group(function () {
+        Route::get('/create/{item_id}', [PaymentController::class, 'create'])->name('create');
+        Route::post('/store/{item_id}', [PaymentController::class, 'store'])->name('store');
+    });
 });

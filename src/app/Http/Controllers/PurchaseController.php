@@ -18,6 +18,11 @@ class PurchaseController extends Controller
 
     public function action(Request $request, $item_id)
     {
+        $payment = $request->payment;
+        $postcode = $request->postcode;
+        $address = $request->address;
+        $building = $request->building;
+
         $user = auth()->user();
         $create_data = [
             'user_id' => $user->id,
@@ -27,9 +32,12 @@ class PurchaseController extends Controller
             'address' => $request->address,
             'building' => $request->building,
         ];
-
-        Purchase::create($create_data);
-        return redirect('/thanks');
+        if ($request->payment == 'クレジットカード') {
+            return redirect("/payment/create/$item_id?payment=$payment&postcode=$postcode&address=$address&building=$building");
+        } else {
+            Purchase::create($create_data);
+            return redirect('/thanks');
+        }
     }
 
     public function address($item_id)
