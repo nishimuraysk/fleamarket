@@ -8,6 +8,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +50,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/create/{item_id}', [PaymentController::class, 'create'])->name('create');
         Route::post('/store/{item_id}', [PaymentController::class, 'store'])->name('store');
     });
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin/user', [AdminController::class, 'user']);
+    Route::post('/admin/user', [AdminController::class, 'delete']);
 });

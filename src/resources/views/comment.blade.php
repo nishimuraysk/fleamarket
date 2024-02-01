@@ -85,7 +85,7 @@
                 <div class="comment-name">
                     {{ $comment['user']['name'] }}
                 </div>
-                @if( $comment->user_id === $user->id )
+                @if( $comment->user_id === $user->id || $user->admin === 1 )
                 <div class="cancel-button-container">
                     <form action="/comment/delete?id={{ $comment['id'] }}" method="POST">
                         @csrf
