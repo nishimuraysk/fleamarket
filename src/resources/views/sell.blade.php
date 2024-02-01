@@ -113,7 +113,7 @@
                 <span class="form__label--item">商品の説明</span>
             </div>
             <div class="form__input--textarea">
-                <textarea name="description" id="description" value="{{ old('description') }}" maxlength="255"></textarea>
+                <textarea name="description" id="description" maxlength="255">{{ old('description') }}</textarea>
             </div>
             @error('description')
             <p class="error-message">{{$errors->first('description')}}</p>

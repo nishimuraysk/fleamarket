@@ -22,7 +22,7 @@ class AddressRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'postcode' => 'required|string|max:8',
+            'postcode' => 'required|string|max:8|regex:/^[0-9]{3}-[0-9]{4}$/',
             'address' => 'required|string|max:255',
             'building' => 'required|string|max:255',
         ];
@@ -31,9 +31,9 @@ class AddressRequest extends FormRequest
     public function messages()
     {
         return [
-            'postcode' => '郵便番号は8文字以内で必ず入力してください。',
-            'address' => '住所は255文字以内で必ず入力してください。',
-            'building' => '建物名は255文字以内で必ず入力してください。',
+            'postcode' => 'ハイフンを入れて正しく入力してください。',
+            'address' => '正しく入力してください。',
+            'building' => '正しく入力してください。',
         ];
     }
 }

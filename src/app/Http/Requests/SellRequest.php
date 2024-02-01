@@ -27,19 +27,19 @@ class SellRequest extends FormRequest
             'condition_id' => 'required',
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'price' => 'required|integer',
+            'price' => 'required|numeric|between:1,9999999',
         ];
     }
 
     public function messages()
     {
         return [
-            'image' => '商品画像は必ず入力してください。',
-            'category_id' => 'カテゴリは選択肢から選択してください。',
-            'condition_id' => '商品の状態は選択肢から選択してください。',
-            'name' => '商品名は255文字以内で必ず入力してください。',
-            'description' => '商品説明は255文字以内で必ず入力してください。',
-            'price' => '販売価格は数値で必ず入力してください。',
+            'image' => '必ず入力してください。',
+            'category_id' => '選択肢から選択してください。',
+            'condition_id' => '選択肢から選択してください。',
+            'name' => '必ず入力してください。',
+            'description' => '必ず入力してください。',
+            'price' => '1〜999万円の範囲で入力してください。',
         ];
     }
 }
