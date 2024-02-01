@@ -24,6 +24,11 @@
             <a class="unselected__link" href="/user/{{ $user['id'] }}">マイリスト</a>
         </div>
         @endif
+        @if ( !empty($user->admin) )
+        <div class="admin">
+            <a class="unselected__link" href="/admin">管理画面</a>
+        </div>
+        @endif
         @endif
     </div>
 </div>

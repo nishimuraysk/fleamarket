@@ -1,6 +1,6 @@
 .admin__container {
     max-width: 1230px;
-    margin: 45px auto 40px auto;
+    margin: 70px auto 40px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@
     font-size: 14px;
 }
 
-.reservation__content {
+.admin__user__content {
     max-width: 1230px;
     margin: 10px auto;
 }

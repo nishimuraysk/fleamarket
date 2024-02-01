@@ -12,6 +12,14 @@
     </div>
     @endif
 </div>
+<div class="admin__container">
+    <div class="admin__content-unselected">
+        <a class="admin-unselected" href="/admin/user">ユーザー管理 ＞</a>
+    </div>
+    <div class="admin__content-selected">
+        <p class="admin-selected">メール送信</p>
+    </div>
+</div>
 <div class="input__content">
     <form action="/admin/mail" method="POST" enctype="multipart/form-data">
         @csrf

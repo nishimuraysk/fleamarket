@@ -13,7 +13,7 @@
         <a class="admin-unselected" href="/admin/mail">メール送信 ＞</a>
     </div>
 </div>
-<div class="reservation__content">
+<div class="admin__user__content">
     <h1 class="h1">ユーザー情報一覧</h1>
     <div class="table">
         <table class="table__inner">

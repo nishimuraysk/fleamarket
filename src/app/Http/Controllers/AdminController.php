@@ -11,7 +11,7 @@ class AdminController extends Controller
     {
         $user = auth()->user();
         if ($user->admin == 1) {
-            return view('admin');
+            return view('admin', ['user' => $user]);
         } else {
             return redirect('/');
         }

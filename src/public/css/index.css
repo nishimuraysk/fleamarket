@@ -38,6 +38,10 @@
     width: 120px;
 }
 
+.admin {
+    width: 120px;
+}
+
 .unselected__link {
     text-decoration: none;
     color: #333;
@@ -129,6 +133,11 @@
     }
 
     .mylist {
+        display: flex;
+        justify-content: center;
+    }
+
+    .admin {
         display: flex;
         justify-content: center;
     }

@@ -1,11 +1,7 @@
-.link__container:first-child {
-    margin-top: 50px
-}
-
-.link__container {
+.admin__container {
     width: 400px;
     height: 50px;
-    margin: 20px auto;
+    margin: 30px auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,4 +14,73 @@
 .link {
     text-decoration: none;
     color: black;
+}
+
+.under-line {
+    width: 100vw;
+    height: 60px;
+    margin-top: 10px;
+    border: solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-width: 1px;
+    border-bottom-color: #333;
+}
+
+.link__container {
+    display: flex;
+    align-items: center;
+    max-width: 1230px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+
+.recommend {
+    width: 120px;
+}
+
+.selected__link {
+    text-decoration: none;
+    color: #FF5555;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mylist {
+    width: 120px;
+}
+
+.admin {
+    width: 120px;
+}
+
+.unselected__link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .link__container {
+        margin: auto;
+        justify-content: center;
+    }
+
+    .recommend {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mylist {
+        display: flex;
+        justify-content: center;
+    }
+
+    .admin {
+        display: flex;
+        justify-content: center;
+    }
 }

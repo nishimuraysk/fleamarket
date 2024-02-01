@@ -87,3 +87,46 @@
     justify-content: center;
     align-items: center;
 }
+
+.admin__container {
+    max-width: 1230px;
+    margin: 45px auto 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin__content-selected {
+    width: 200px;
+    height: 35px;
+    margin-left: 20px;
+    background-color: rgb(59, 54, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.admin-selected {
+    color: white;
+    font-size: 14px;
+}
+
+.admin__content-unselected {
+    width: 200px;
+    height: 35px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+}
+
+.admin-unselected {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
