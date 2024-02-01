@@ -122,3 +122,9 @@
     font-size: 14px;
     font-weight: normal;
 }
+
+.error-message {
+    margin-top: 10px;
+    color: #FF5555;
+    font-size: 14px;
+}

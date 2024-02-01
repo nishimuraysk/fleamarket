@@ -9,10 +9,12 @@ use Exception;
 
 class PaymentController extends Controller
 {
-    public function create($item_id)
+    public function create(Request $request, $item_id)
     {
+        $data = $request->query();
+
         $item = Item::where('id', $item_id)->first();
-        return view('payment', ['item' => $item]);
+        return view('payment', ['item' => $item, 'data' => $data]);
     }
 
     public function store(Request $request, $item_id)
@@ -32,16 +34,16 @@ class PaymentController extends Controller
             return back()->with('flash_alert', '決済に失敗しました(' . $e->getMessage() . ')');
         }
 
-        $query = $request->query();
         $user = auth()->user();
         $create_data = [
             'user_id' => $user->id,
             'item_id' =>  $item_id,
-            'payment' => $query['payment'],
-            'postcode' => $query['postcode'],
-            'address' => $query['address'],
-            'building' => $query['building'],
+            'payment' => $request->payment,
+            'postcode' => $request->postcode,
+            'address' => $request->address,
+            'building' => $request->building,
         ];
+
         Purchase::create($create_data);
         return redirect('/thanks');
     }

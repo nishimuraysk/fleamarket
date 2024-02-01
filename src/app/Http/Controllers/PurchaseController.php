@@ -16,7 +16,7 @@ class PurchaseController extends Controller
         return view('purchase', ['user' => $user, 'item' => $item]);
     }
 
-    public function action(Request $request, $item_id)
+    public function action(AddressRequest $request, $item_id)
     {
         $payment = $request->payment;
         $postcode = $request->postcode;

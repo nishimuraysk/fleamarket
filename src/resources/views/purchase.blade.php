@@ -53,6 +53,9 @@
                 <input type="text" name="postcode" value="{{ $user->postcode }}" readonly />
                 @endif
             </div>
+            @error('postcode')
+            <p class="error-message">{{$errors->first('postcode')}}</p>
+            @enderror
         </div>
         <div class="form__group">
             <div class="form__group-title">
@@ -65,6 +68,9 @@
                 <input type="text" name="address" value="{{ $user->address }}" readonly />
                 @endif
             </div>
+            @error('address')
+            <p class="error-message">{{$errors->first('address')}}</p>
+            @enderror
         </div>
         <div class="form__group">
             <div class="form__group-title">
@@ -77,6 +83,9 @@
                 <input type="text" name="building" value="{{ $user->building }}" readonly />
                 @endif
             </div>
+            @error('building')
+            <p class="error-message">{{$errors->first('building')}}</p>
+            @enderror
         </div>
         <div class="form__button">
             <button class="form__button-submit" type="submit">購入する</button>
