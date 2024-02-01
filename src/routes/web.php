@@ -9,6 +9,7 @@ use App\Http\Controllers\SellController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,4 +54,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
     Route::get('/admin/user', [AdminController::class, 'user']);
     Route::post('/admin/user', [AdminController::class, 'delete']);
+    Route::get('/admin/mail', [MailController::class, 'index']);
+    Route::post('/admin/mail', [MailController::class, 'send']);
 });
