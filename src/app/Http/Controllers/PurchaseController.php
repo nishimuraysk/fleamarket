@@ -32,7 +32,7 @@ class PurchaseController extends Controller
             'address' => $request->address,
             'building' => $request->building,
         ];
-        if ($request->payment == 'クレジットカード') {
+        if ($request->payment == '1') {
             return redirect("/payment/create/$item_id?payment=$payment&postcode=$postcode&address=$address&building=$building");
         } else {
             Purchase::create($create_data);

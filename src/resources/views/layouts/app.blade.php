@@ -23,7 +23,6 @@
                 <nav class="nav">
                     <div class="search-box">
                         <form action="/search" class="search-form" method="get">
-                            @csrf
                             @if ( !empty($input_keyword) )
                             <input type="text" name="keyword" value="{{ $input_keyword }}" placeholder="なにをお探しですか？" class="search-text">
                             @else
