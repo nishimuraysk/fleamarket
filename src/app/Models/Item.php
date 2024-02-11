@@ -17,6 +17,7 @@ class Item extends Model
         'name',
         'description',
         'price',
+        'sold',
     ];
 
     public function user()

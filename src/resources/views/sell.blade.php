@@ -125,7 +125,7 @@
                 <span class="form__label--item">販売価格</span>
             </div>
             <div class="form__input--text">
-                <input type="number" name="price" id="price" value="{{ old('price') }}" />
+                <input type="text" name="price" id="price" value="{{ old('price') }}" />
             </div>
             @error('price')
             <p class="error-message">{{$errors->first('price')}}</p>

@@ -13,7 +13,7 @@ class ItemController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $items = Item::orderBy('created_at', 'desc')->get();
+        $items = Item::whereNull('sold')->orderBy('created_at', 'desc')->get();
         return view('index', ['user' => $user, 'items' => $items]);
     }
 
@@ -27,7 +27,7 @@ class ItemController extends Controller
     public function category($category_id)
     {
         $category = Category::where('id', $category_id)->first();
-        $items = Item::where('category_id', $category_id)->orderBy('created_at', 'desc')->get();
+        $items = Item::where('category_id', $category_id)->whereNull('sold')->orderBy('created_at', 'desc')->get();
         return view('index', ['category' => $category, 'items' => $items]);
     }
 
@@ -35,7 +35,7 @@ class ItemController extends Controller
     {
         $user = auth()->user();
         $input_keyword = $request->keyword;
-        $items = Item::KeywordSearch($input_keyword)->get();
+        $items = Item::KeywordSearch($input_keyword)->whereNull('sold')->get();
 
         return view('index', ['user' => $user,  'items' => $items, 'input_keyword' => $input_keyword]);
     }
@@ -51,7 +51,7 @@ class ItemController extends Controller
             $favorite = Favorite::where('user_id', $user->id)->where('item_id', $item_id)->first();
 
             return view('item', ['item' => $item, 'favorite_count' => $favorite_count, 'comment_count' => $comment_count, 'favorite' => $favorite]);
-        };
+        }
 
         return view('item', ['item' => $item, 'favorite_count' => $favorite_count, 'comment_count' => $comment_count]);
     }

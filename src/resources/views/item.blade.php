@@ -62,6 +62,7 @@
                 </div>
             </div>
         </div>
+        @if ( empty($item['sold']) )
         <div class="button__container">
             <a class="button__link" href="/purchase/{{ $item['id'] }}">
                 <button class="button">
@@ -69,6 +70,11 @@
                 </button>
             </a>
         </div>
+        @else
+        <div class="button__container">
+            <div class="sold_out">完売しました</div>
+        </div>
+        @endif
         <div class="item-heading">
             商品説明
         </div>

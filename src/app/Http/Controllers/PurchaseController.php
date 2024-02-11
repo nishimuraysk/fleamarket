@@ -13,7 +13,11 @@ class PurchaseController extends Controller
     {
         $user = auth()->user();
         $item = Item::where('id', $item_id)->first();
-        return view('purchase', ['user' => $user, 'item' => $item]);
+        if (empty($item->sold)) {
+            return view('purchase', ['user' => $user, 'item' => $item]);
+        } else {
+            return redirect('/');
+        }
     }
 
     public function action(AddressRequest $request, $item_id)
@@ -36,6 +40,12 @@ class PurchaseController extends Controller
             return redirect("/payment/create/$item_id?payment=$payment&postcode=$postcode&address=$address&building=$building");
         } else {
             Purchase::create($create_data);
+
+            $update_data = [
+                'sold' => 1,
+            ];
+
+            Item::find($item_id)->update($update_data);
             return redirect('/thanks');
         }
     }
@@ -43,7 +53,11 @@ class PurchaseController extends Controller
     public function address($item_id)
     {
         $item = Item::where('id', $item_id)->first();
-        return view('address', ['item' => $item]);
+        if (empty($item->sold)) {
+            return view('address', ['item' => $item]);
+        } else {
+            return redirect('/');
+        }
     }
 
     public function update(AddressRequest $request, $item_id)

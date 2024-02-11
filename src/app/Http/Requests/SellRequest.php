@@ -27,7 +27,7 @@ class SellRequest extends FormRequest
             'condition_id' => 'required',
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'price' => 'required|numeric|between:1,9999999',
+            'price' => 'required|integer|between:1,9999999',
         ];
     }
 
@@ -39,7 +39,7 @@ class SellRequest extends FormRequest
             'condition_id' => '選択肢から選択してください。',
             'name' => '必ず入力してください。',
             'description' => '必ず入力してください。',
-            'price' => '1〜999万円の範囲で入力してください。',
+            'price' => '1〜999万円の整数で入力してください。',
         ];
     }
 }

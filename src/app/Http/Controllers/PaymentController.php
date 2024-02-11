@@ -14,7 +14,11 @@ class PaymentController extends Controller
         $data = $request->query();
 
         $item = Item::where('id', $item_id)->first();
-        return view('payment', ['item' => $item, 'data' => $data]);
+        if (empty($item->sold)) {
+            return view('payment', ['item' => $item, 'data' => $data]);
+        } else {
+            return redirect('/');
+        }
     }
 
     public function store(Request $request, $item_id)
@@ -45,6 +49,12 @@ class PaymentController extends Controller
         ];
 
         Purchase::create($create_data);
+
+        $update_data = [
+            'sold' => 1,
+        ];
+
+        Item::find($item_id)->update($update_data);
         return redirect('/thanks');
     }
 }
