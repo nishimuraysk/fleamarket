@@ -22,7 +22,7 @@ class SellRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'required|string',
+            'image' => 'required',
             'category_id' => 'required',
             'condition_id' => 'required',
             'name' => 'required|string|max:255',

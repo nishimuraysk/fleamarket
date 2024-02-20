@@ -6,6 +6,7 @@ use App\Models\Item;
 use App\Models\Purchase;
 use App\Models\User;
 use App\Http\Requests\MypageRequest;
+use Illuminate\Support\Facades\Storage;
 
 class MypageController extends Controller
 {
@@ -32,13 +33,27 @@ class MypageController extends Controller
     public function update(MypageRequest $request)
     {
         $user = auth()->user();
-        $update_data = [
-            'name' => $request->name,
-            'image' => $request->image,
-            'postcode' => $request->postcode,
-            'address' => $request->address,
-            'building' => $request->building,
-        ];
+
+        if (!empty($request->image)) {
+            $image = $request->file('image');
+            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $file = Storage::url($path);
+
+            $update_data = [
+                'name' => $request->name,
+                'image' => $file,
+                'postcode' => $request->postcode,
+                'address' => $request->address,
+                'building' => $request->building,
+            ];
+        } else {
+            $update_data = [
+                'name' => $request->name,
+                'postcode' => $request->postcode,
+                'address' => $request->address,
+                'building' => $request->building,
+            ];
+        }
 
         User::find($user->id)->update($update_data);
         return redirect()->back()->with('message', 'プロフィールを変更しました');

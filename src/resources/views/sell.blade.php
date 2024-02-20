@@ -16,15 +16,13 @@
     <div class="sell-form__heading">
         <h2>商品の出品</h2>
     </div>
-    <form class="sell__form" action="/sell" method="post">
+    <form class="sell__form" action="/sell" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form__group">
-            <div class="form__group-title">
-                <span class="form__label--item">商品画像URL</span>
+            <div class="sell-title">
+                商品画像
             </div>
-            <div class="form__input--text">
-                <input type="text" name="image" id="image" value="{{ old('image') }}" />
-            </div>
+            <input type="file" id="image" name="image" class="form-control">
             @error('image')
             <p class="error-message">{{$errors->first('image')}}</p>
             @enderror

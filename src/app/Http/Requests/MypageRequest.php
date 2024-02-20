@@ -24,7 +24,6 @@ class MypageRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'image' => 'required|string',
             'postcode' => 'required|string|max:8|regex:/^[0-9]{3}-[0-9]{4}$/',
             'address' => 'required|string|max:255',
             'building' => 'required|string|max:255',
@@ -35,7 +34,6 @@ class MypageRequest extends FormRequest
     {
         return [
             'name' => '必ず入力してください。',
-            'image' => '必ず入力してください。',
             'postcode' => 'ハイフンを入れて正しく入力してください。',
             'address' => '正しく入力してください。',
             'building' => '正しく入力してください。',

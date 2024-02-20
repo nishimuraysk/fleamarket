@@ -16,22 +16,13 @@
     <div class="profile-form__heading">
         <h2>プロフィール設定</h2>
     </div>
-    <form class="profile__form" action="/mypage/profile" method="post">
+    <form class="profile__form" action="/mypage/profile" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
-                <span class="form__label--item">プロフィール画像URL</span>
+                <span class="form__label--item">プロフィール画像</span>
             </div>
-            <div class="form__input--text">
-                @if( !empty($user->image) )
-                <input type="text" name="image" value="{{ $user->image }}" />
-                @else
-                <input type="text" name="image" id="image" value="{{ old('image') }}" />
-                @endif
-            </div>
-            @error('image')
-            <p class="error-message">{{$errors->first('image')}}</p>
-            @enderror
+            <input type="file" id="image" name="image" class="form-control">
         </div>
         <div class="form__group">
             <div class="form__group-title">

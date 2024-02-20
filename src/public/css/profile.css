@@ -142,3 +142,10 @@
     color: #FF5555;
     font-size: 14px;
 }
+
+.form-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
