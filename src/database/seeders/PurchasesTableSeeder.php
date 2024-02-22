@@ -16,7 +16,6 @@ class PurchasesTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'item_id' => 24,
-            'payment' => 1,
             'postcode' => '154-0004',
             'address' => '東京都世田谷区太子堂1-5-13',
             'building' => 'マンション三軒茶屋202',

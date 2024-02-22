@@ -27,16 +27,6 @@
             </div>
         </div>
         <div class="form__group">
-            <div class="purchase-title">お支払い方法</div>
-            <div class="form__input--text">
-                <select name="payment" id="payment" value="{{ old('payment') }}">
-                    <option value="1" selected>クレジットカード</option>
-                    <option value="2">コンビニ払い</option>
-                    <option value="3">銀行振込</option>
-                </select>
-            </div>
-        </div>
-        <div class="form__group">
             <div class="purchase-title">
                 配送先
                 <div class="address-change-link__container">

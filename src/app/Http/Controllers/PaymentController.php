@@ -42,7 +42,6 @@ class PaymentController extends Controller
         $create_data = [
             'user_id' => $user->id,
             'item_id' =>  $item_id,
-            'payment' => $request->payment,
             'postcode' => $request->postcode,
             'address' => $request->address,
             'building' => $request->building,
