@@ -21,7 +21,7 @@
         </div>
         @if ( !empty($user) )
         <div class="mylist">
-            <a class="unselected__link" href="/user/{{ $user['id'] }}">マイリスト</a>
+            <a class="unselected__link" href="/mylist">マイリスト</a>
         </div>
         @endif
         @endif
@@ -47,7 +47,7 @@
     @endforeach
     @if (count($items) === 0)
     <div class="message__container">
-        検索条件に該当する商品情報はございません。
+        該当する商品情報はございません。
     </div>
     @endif
 </div>

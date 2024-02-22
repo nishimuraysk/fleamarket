@@ -17,10 +17,10 @@ class ItemController extends Controller
         return view('index', ['user' => $user, 'items' => $items]);
     }
 
-    public function mylist($user_id)
+    public function mylist()
     {
         $user = auth()->user();
-        $favorites = Favorite::with('item')->where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
+        $favorites = Favorite::with('item')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
         return view('mylist', ['user' => $user,  'favorites' => $favorites]);
     }
 
@@ -43,6 +43,11 @@ class ItemController extends Controller
     public function detail($item_id)
     {
         $item = Item::with(['category', 'condition'])->where('id', $item_id)->first();
+
+        if (empty($item)) {
+            return redirect('/');
+        }
+
         $favorite_count = Favorite::where('item_id', $item_id)->count();
         $comment_count = Comment::where('item_id', $item_id)->count();
 

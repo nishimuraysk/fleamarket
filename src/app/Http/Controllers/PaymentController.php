@@ -14,6 +14,11 @@ class PaymentController extends Controller
         $data = $request->query();
 
         $item = Item::where('id', $item_id)->first();
+
+        if (empty($item)) {
+            return redirect('/');
+        }
+
         if (empty($item->sold)) {
             return view('payment', ['item' => $item, 'data' => $data]);
         } else {

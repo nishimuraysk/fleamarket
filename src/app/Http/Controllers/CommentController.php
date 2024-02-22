@@ -13,6 +13,11 @@ class CommentController extends Controller
     public function index($item_id)
     {
         $item = Item::with(['category', 'condition'])->where('id', $item_id)->first();
+
+        if (empty($item)) {
+            return redirect('/');
+        }
+
         $favorite_count = Favorite::where('item_id', $item_id)->count();
         $comment_count = Comment::where('item_id', $item_id)->count();
         $comments = Comment::with('user')->where('item_id', $item_id)->get();

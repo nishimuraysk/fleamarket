@@ -11,6 +11,11 @@ class PurchaseController extends Controller
     {
         $user = auth()->user();
         $item = Item::where('id', $item_id)->first();
+
+        if (empty($item)) {
+            return redirect('/');
+        }
+
         if (empty($item->sold)) {
             return view('purchase', ['user' => $user, 'item' => $item]);
         } else {
@@ -25,14 +30,17 @@ class PurchaseController extends Controller
         $address = $request->address;
         $building = $request->building;
 
-        $user = auth()->user();
-
         return redirect("/payment/create/$item_id?payment=$payment&postcode=$postcode&address=$address&building=$building");
     }
 
     public function address($item_id)
     {
         $item = Item::where('id', $item_id)->first();
+
+        if (empty($item)) {
+            return redirect('/');
+        }
+
         if (empty($item->sold)) {
             return view('address', ['item' => $item]);
         } else {

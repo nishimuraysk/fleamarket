@@ -8,10 +8,11 @@ use App\Models\User;
 
 class UserTest extends TestCase
 {
-    use RefreshDatabase;
     /**
      * A basic feature test example.
      */
+    use RefreshDatabase;
+
     public function testLogin(): void
     {
         $response = $this->get('/login');
@@ -22,5 +23,7 @@ class UserTest extends TestCase
 
         $response = $this->get('/login');
         $response->assertStatus(302);
+
+        $this->artisan('migrate:refresh --seed');
     }
 }

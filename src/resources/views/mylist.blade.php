@@ -33,5 +33,10 @@
         </div>
     </a>
     @endforeach
+    @if (count($favorites) === 0)
+    <div class="message__container">
+        該当する商品情報はございません。
+    </div>
+    @endif
 </div>
 @endsection
