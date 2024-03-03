@@ -177,8 +177,6 @@ https://github.com/nishimuraysk/fleamarket/assets/140567528/5483e29a-fb7e-4de5-b
 docker-compose up -d --build
 docker-compose exec php bash
 composer create-project "laravel/laravel=10.*" . --prefer-dist
-composer require laravel/breeze --dev
-php artisan breeze:install
 php artisan migrate
 npm install
 npm run dev
