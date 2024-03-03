@@ -36,10 +36,6 @@
 
             <div id="card-errors" class="text-danger"></div>
 
-            @foreach ( $data as $key => $value )
-            <input type="text" id="{{ $key }}" name="{{ $key }}" value="{{ $value }}" hidden />
-            @endforeach
-
             <button class=" button">支払い</button>
         </form>
     </div>

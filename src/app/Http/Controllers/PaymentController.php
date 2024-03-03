@@ -11,16 +11,10 @@ class PaymentController extends Controller
 {
     public function create(Request $request, $item_id)
     {
-        $data = $request->query();
 
         $item = Item::where('id', $item_id)->first();
-
-        if (empty($item)) {
-            return redirect('/');
-        }
-
         if (empty($item->sold)) {
-            return view('payment', ['item' => $item, 'data' => $data]);
+            return view('payment', ['item' => $item]);
         } else {
             return redirect('/');
         }
@@ -47,6 +41,7 @@ class PaymentController extends Controller
         $create_data = [
             'user_id' => $user->id,
             'item_id' =>  $item_id,
+            'payment' => $request->payment,
             'postcode' => $request->postcode,
             'address' => $request->address,
             'building' => $request->building,
