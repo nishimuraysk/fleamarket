@@ -38,6 +38,7 @@ https://github.com/nishimuraysk/fleamarket/assets/140567528/edc6a7f2-b961-496d-b
 ◾️コメントページ（/comment/:item_id）
 
 ※seederにあるユーザーデータを利用する場合は、削除機能が使える「test02@email.com」でご確認ください
+
 ※自分で投稿したコメントは削除できるようにしているので「test01@email.com」でご確認いただいても大丈夫です
 
 https://github.com/nishimuraysk/fleamarket/assets/140567528/caf08ef8-483d-4318-89af-ee224074d120
@@ -83,6 +84,7 @@ https://github.com/nishimuraysk/fleamarket/assets/140567528/0876929d-4ccd-435e-b
 ◾️管理画面機能選択ページ（/admin）
 
 ※管理者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
+
 ※また、当ページは管理者がログインした後の最初のページに設定しています
 
 https://github.com/nishimuraysk/fleamarket/assets/140567528/8e987436-e8f9-407a-b648-ffde40a3b55e
